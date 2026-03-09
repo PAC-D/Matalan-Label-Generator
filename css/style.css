@@ -500,6 +500,15 @@ body {
     z-index: 10;
 }
 
+.a4-page[data-size="a5"] .corner-box {
+    right: 1.5rem;
+}
+
+.a4-page[data-size="custom"] .corner-box {
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
 .hidden {
     display: none !important;
 }
@@ -516,8 +525,8 @@ body {
     height: 50%;
     border-radius: 30px;
     margin: 0;
-    padding: 2.5rem;
-    /* Restored default padding */
+    padding: 1.5rem 1rem;
+    /* Reduced padding for more text space */
 }
 
 /* Dynamic Padding Reduction Class */
@@ -572,12 +581,23 @@ body {
 
 /* Overlap protections */
 /* Overlap protections */
-.label-content.has-corner-box .row:nth-last-child(-n+3) {
+.label-content.has-corner-box>.row:nth-last-child(-n+4) {
     margin-right: 180px;
 }
 
-.a4-page[data-size="custom"] .label-content.has-corner-box .row:nth-last-child(-n+5) {
+.a4-page[data-size="custom"] .label-content.has-corner-box>.row:nth-last-child(-n+6) {
     margin-right: 180px;
+}
+
+/* A5 specific overrides */
+.a4-page[data-size="a5"] .label-content {
+    justify-content: space-between;
+    gap: 0;
+}
+
+.a4-page[data-size="a5"] .label-key {
+    min-width: 200px;
+    /* Align all keys consistently */
 }
 
 /* Custom size specific overrides */
@@ -593,6 +613,16 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }
 
 /* MODAL */

@@ -1,5 +1,25 @@
 # Version History
 
+## v3.0 (Major Layout & Fields Update)
+**Release Date:** March 09, 2026
+
+### 🚀 New Features
+- **New Input Fields:**
+  - Added *Carton Dimensions* (Length, Width, Height) inputs.
+  - Added *Gross Weight (KG)* input.
+- **Enhanced Label Layout:**
+  - **A5 & Custom Modes:** Display PO Number / Style Ref on one line.
+  - Display Pack ID / Box Quantity symmetrically on the same line to save vertical space.
+  - New carton dimensions and gross weight neatly nested below.
+  - Optimized corner box ("H") positioning to prevent overlaps.
+- **Auto-Shrink Text (Single-Line Clamp):**
+  - PO Number, Style Ref, Line Code, and Pack ID now automatically scale down their font sizes to guarantee they stay perfectly formatted on one line.
+- **A5 Layout Optimization:** 
+  - Reduced side paddings & vertical margins for maximized text space.
+  - Distributed single-line items evenly across the label container vertically using flexbox (`justify-content: space-between`).
+
+---
+
 ## v2.4 (Default Size Update)
 **Release Date:** February 11, 2026
 
@@ -33,7 +53,7 @@
 
 ### 📚 Documentation
 - Updated instruction manual to document the new 12-slot layout and A5 two-row display.
-- Bumped manual version to **1.1 | February 2026**.
+- Bumped manual version to **3.0 | March 2026**.
 
 ---
 

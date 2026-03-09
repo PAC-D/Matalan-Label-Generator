@@ -85,17 +85,6 @@
                             <input type="text" id="lineCode" value="" placeholder=" ">
                             <label for="lineCode">Line Code</label>
                         </div>
-                        <div class="form-group floating-group">
-                            <input type="text" id="packId" value="" placeholder=" ">
-                            <label for="packId">Pack ID</label>
-                        </div>
-                    </div>
-
-                    <div class="input-grid">
-                        <div class="form-group floating-group">
-                            <input type="text" id="boxQty" value="" placeholder=" ">
-                            <label for="boxQty">Box Qty</label>
-                        </div>
                         <div class="form-group">
                             <select id="division" class="custom-select">
                                 <option value="L - LADIES">L - LADIES</option>
@@ -106,6 +95,42 @@
                                 <option value="G - Girls">G - Girls</option>
                             </select>
                         </div>
+                    </div>
+
+                    <div class="input-grid">
+                        <div class="form-group floating-group">
+                            <input type="text" id="packId" value="" placeholder=" ">
+                            <label for="packId">Pack ID</label>
+                        </div>
+                        <div class="form-group floating-group">
+                            <input type="text" id="boxQty" value="" placeholder=" ">
+                            <label for="boxQty">Box Qty</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <label class="section-label"
+                            style="display: block; margin-bottom: 0.5rem; font-size: 0.8rem; color: var(--text-muted, #64748b);">Carton
+                            Dimensions</label>
+                        <div class="input-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <div class="form-group floating-group">
+                                <input type="text" id="cartonLength" value="" placeholder=" ">
+                                <label for="cartonLength">Length</label>
+                            </div>
+                            <div class="form-group floating-group">
+                                <input type="text" id="cartonWidth" value="" placeholder=" ">
+                                <label for="cartonWidth">Width</label>
+                            </div>
+                            <div class="form-group floating-group">
+                                <input type="text" id="cartonHeight" value="" placeholder=" ">
+                                <label for="cartonHeight">Height</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group floating-group">
+                        <input type="text" id="grossWeight" value="" placeholder=" ">
+                        <label for="grossWeight">Gross Weight (KG)</label>
                     </div>
 
                     <div class="form-group">
@@ -227,13 +252,15 @@
     <!-- Template for a single label -->
     <template id="labelTemplate">
         <div class="label-content">
-            <div class="row">
-                <span class="label-key">PO NUMBER</span>
-                <span class="label-value" data-key="poNumber"></span>
-            </div>
-            <div class="row">
-                <span class="label-key">STYLE REF</span>
-                <span class="label-value" data-key="styleRef"></span>
+            <div class="row" style="display: flex; gap: 1rem; width: 100%;">
+                <div style="display: flex; align-items: baseline; gap: 1rem; flex: 1.2;">
+                    <span class="label-key">PO NUMBER</span>
+                    <span class="label-value" data-key="poNumber"></span>
+                </div>
+                <div style="display: flex; align-items: baseline; gap: 1rem; flex: 1;">
+                    <span class="label-key" style="min-width: 140px;">STYLE REF</span>
+                    <span class="label-value" data-key="styleRef"></span>
+                </div>
             </div>
             <div class="row">
                 <span class="label-key">SUPPLIER NAME</span>
@@ -247,13 +274,23 @@
                 <span class="label-key">LINE CODE NUMBER</span>
                 <span class="label-value" data-key="lineCode"></span>
             </div>
-            <div class="row">
-                <span class="label-key">PACK ID</span>
-                <span class="label-value" data-key="packId"></span>
+            <div class="row" style="display: flex; gap: 1rem; width: 100%;">
+                <div style="display: flex; align-items: baseline; gap: 1rem; flex: 1.2;">
+                    <span class="label-key">PACK ID</span>
+                    <span class="label-value" data-key="packId"></span>
+                </div>
+                <div style="display: flex; align-items: baseline; gap: 1rem; flex: 1;">
+                    <span class="label-key" style="min-width: 140px;">BOX QUANTITY</span>
+                    <span class="label-value" data-key="boxQty"></span>
+                </div>
             </div>
             <div class="row">
-                <span class="label-key">BOX QUANTITY</span>
-                <span class="label-value" data-key="boxQty"></span>
+                <span class="label-key">CARTON DIMENTION</span>
+                <span class="label-value" data-key="cartonDimension"></span>
+            </div>
+            <div class="row">
+                <span class="label-key">GROSS WEIGHT (KG)</span>
+                <span class="label-value" data-key="grossWeight"></span>
             </div>
             <div class="row">
                 <span class="label-key">COLOR</span>

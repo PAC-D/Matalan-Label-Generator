@@ -1,4 +1,4 @@
-# Matalan Shipping Label Generator v2
+# Matalan Shipping Label Generator v3
 
 ## Overview
 The Matalan Shipping Label Generator v2 is a web-based tool designed to streamline the creation and printing of shipping and product labels. This application allows users to generate custom labels with specific formatting and export them to PDF.

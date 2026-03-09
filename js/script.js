@@ -65,6 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
             supplierName: document.getElementById('supplierName').value,
             lineCode: document.getElementById('lineCode').value,
             packId: document.getElementById('packId').value,
+            cartonDimension: [
+                document.getElementById('cartonLength').value,
+                document.getElementById('cartonWidth').value,
+                document.getElementById('cartonHeight').value
+            ].filter(v => v).join(' x '),
+            grossWeight: document.getElementById('grossWeight').value,
             boxQty: document.getElementById('boxQty').value,
             description: document.getElementById('description').value,
             color: document.getElementById('color').value,
@@ -219,15 +225,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reset padding before re-measuring
         container.classList.remove('tight-padding');
 
-        const resizableKeys = ['supplierName', 'factoryName', 'description'];
+        const keys2Line = ['supplierName', 'factoryName', 'description'];
+        const keys1Line = ['poNumber', 'styleRef', 'lineCode', 'packId'];
 
-        resizableKeys.forEach(key => {
+        const shrinkText = (key, clampClass) => {
             const el = container.querySelector(`[data-key="${key}"]`);
             if (el) {
-                el.classList.add('line-clamp-2');
-
+                el.classList.add(clampClass);
                 let size = parseInt(window.getComputedStyle(el).fontSize);
-                const minSize = 9;
+                const minSize = 8; // allow shrinking a bit more to fit on 1 line
 
                 // Shrink until it fits in the clamp box
                 while (el.scrollHeight > el.clientHeight && size > minSize) {
@@ -235,7 +241,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     el.style.fontSize = size + 'px';
                 }
             }
-        });
+        };
+
+        keys2Line.forEach(key => shrinkText(key, 'line-clamp-2'));
+        keys1Line.forEach(key => shrinkText(key, 'line-clamp-1'));
 
         // Check if the overall content overflows the container
         const labelContent = container.querySelector('.label-content');
