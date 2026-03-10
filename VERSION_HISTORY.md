@@ -1,5 +1,19 @@
 # Version History
 
+## v3.1 (Favicon & Typo Fixes)
+**Release Date:** March 10, 2026
+
+### 🚀 New Features
+- **Favicon Integration:**
+  - Added a custom pacd favicon (`favicon.png`) to the main generator app and the instruction manual for better brand identity in browser tabs.
+
+### 🐛 Bug Fixes
+- **Label Text Consistency:**
+  - Renamed "Carton Dimensions" to "Carton Dimension" in the configuration sidebar for consistency.
+  - Fixed a typo where it was misspelled as "CARTON DIMENTION" on the actual generated label.
+
+---
+
 ## v3.0 (Major Layout & Fields Update)
 **Release Date:** March 09, 2026
 
