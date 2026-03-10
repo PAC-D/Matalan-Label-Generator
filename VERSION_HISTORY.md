@@ -9,6 +9,7 @@
 
 ### 🐛 Bug Fixes
 - **Label Text Consistency:**
+  - Renamed "Dimensions" to "Label Size" in the configuration sidebar.
   - Renamed "Carton Dimensions" to "Carton Dimension" in the configuration sidebar for consistency.
   - Fixed a typo where it was misspelled as "CARTON DIMENTION" on the actual generated label.
 
