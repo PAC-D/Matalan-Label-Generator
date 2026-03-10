@@ -134,7 +134,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 400px;
+    width: 650px;
     background: var(--bg-card);
     border-right: 1px solid var(--border);
     display: flex;

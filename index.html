@@ -76,12 +76,11 @@
                         <label for="supplierName">Supplier Name</label>
                     </div>
 
-                    <div class="form-group floating-group">
-                        <input type="text" id="factoryName" value="" placeholder=" ">
-                        <label for="factoryName">Factory Name</label>
-                    </div>
-
-                    <div class="input-grid">
+                    <div class="input-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="form-group floating-group">
+                            <input type="text" id="factoryName" value="" placeholder=" ">
+                            <label for="factoryName">Factory Name</label>
+                        </div>
                         <div class="form-group floating-group">
                             <input type="text" id="lineCode" value="" placeholder=" ">
                             <label for="lineCode">Line Code</label>
@@ -98,7 +97,7 @@
                         </div>
                     </div>
 
-                    <div class="input-grid">
+                    <div class="input-grid" style="grid-template-columns: 1fr 1fr 1fr;">
                         <div class="form-group floating-group">
                             <input type="text" id="packId" value="" placeholder=" ">
                             <label for="packId">Pack ID</label>
@@ -107,44 +106,44 @@
                             <input type="text" id="boxQty" value="" placeholder=" ">
                             <label for="boxQty">Box Qty</label>
                         </div>
+                        <div class="form-group floating-group">
+                            <input type="text" id="grossWeight" value="" placeholder=" ">
+                            <label for="grossWeight">Gross Weight (KG)</label>
+                        </div>
                     </div>
 
                     <div class="form-group" style="margin-bottom: 1rem;">
                         <label class="section-label"
                             style="display: block; margin-bottom: 0.5rem; font-size: 0.8rem; color: var(--text-muted, #64748b);">Carton
-                            Dimension</label>
+                            Dimensions</label>
                         <div class="input-grid" style="grid-template-columns: 1fr 1fr 1fr;">
                             <div class="form-group floating-group">
                                 <input type="text" id="cartonLength" value="" placeholder=" ">
-                                <label for="cartonLength">Length</label>
+                                <label for="cartonLength">Length (MM)</label>
                             </div>
                             <div class="form-group floating-group">
                                 <input type="text" id="cartonWidth" value="" placeholder=" ">
-                                <label for="cartonWidth">Width</label>
+                                <label for="cartonWidth">Width (MM)</label>
                             </div>
                             <div class="form-group floating-group">
                                 <input type="text" id="cartonHeight" value="" placeholder=" ">
-                                <label for="cartonHeight">Height</label>
+                                <label for="cartonHeight">Height (MM)</label>
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group floating-group">
-                        <input type="text" id="grossWeight" value="" placeholder=" ">
-                        <label for="grossWeight">Gross Weight (KG)</label>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="section-label" style="margin-bottom: 0.5rem; display: block;">Carton Type</label>
-                        <select id="cartonType" class="custom-select">
-                            <option value="ratio">Ratio (Multiple Sizes)</option>
-                            <option value="single">Single Size</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group floating-group">
-                        <input type="text" id="color" value="" placeholder=" ">
-                        <label for="color">Color</label>
+                    <div class="input-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="form-group">
+                            <label class="section-label" style="display: block; margin-bottom: 0.5rem; font-size: 0.8rem; color: var(--text-muted, #64748b);">Carton Type</label>
+                            <select id="cartonType" class="custom-select">
+                                <option value="ratio">Ratio (Multiple Sizes)</option>
+                                <option value="single">Single Size</option>
+                            </select>
+                        </div>
+                        <div class="form-group floating-group" style="margin-top: 1.8rem;">
+                            <input type="text" id="color" value="" placeholder=" ">
+                            <label for="color">Color</label>
+                        </div>
                     </div>
 
                     <div class="form-group floating-group">

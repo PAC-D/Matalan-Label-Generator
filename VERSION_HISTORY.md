@@ -1,4 +1,18 @@
 # Version History
+## v3.2 (Documentation Enhancements)
+**Release Date:** March 11, 2026
+
+### 📚 Documentation
+- **Instruction Manual Expanded:**
+  - Added new details about the *Carton Dimensions* (MM requirement) and *Gross Weight* in the Application Inputs section.
+  - Increased the manual from **4 pages to 5 pages** to provide a cleaner layout for instructions.
+  - Moved **Printing Specs** and **Troubleshooting** to the new Page 5.
+  - Enlarged the print settings guide screenshot on Page 4 for better visibility and explicitly recommended opening the exported PDF in Microsoft Edge to apply those layout settings perfectly.
+- **Troubleshooting Additions:**
+  - Added visual fixes for: "Values not showing properly" (reselect size and re-enter values).
+  - Added alignment guidance for mobile users (use a computer for perfectly consistent results).
+
+---
 
 ## v3.1 (Favicon & Typo Fixes)
 **Release Date:** March 10, 2026

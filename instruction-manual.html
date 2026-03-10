@@ -568,7 +568,7 @@
 
         <div class="page-footer">
             <img src="assets/allport-pacd-logo.png" alt="Allport PACD" class="footer-logo">
-            <span class="page-number">Page 1 of 4</span>
+            <span class="page-number">Page 1 of 5</span>
             <div class="footer-text">Version 3.0 | March 2026</div>
         </div>
     </div>
@@ -599,7 +599,7 @@
 
         <div class="page-footer">
             <img src="assets/allport-pacd-logo.png" alt="Allport PACD" class="footer-logo">
-            <span class="page-number">Page 2 of 4</span>
+            <span class="page-number">Page 2 of 5</span>
             <div class="footer-text">Version 3.0 | March 2026</div>
         </div>
     </div>
@@ -619,14 +619,19 @@
                     style="width: 45%; display: inline-block;">
             </div>
 
-
+            <div class="info-box">
+                <ul style="margin-top: 5px; margin-bottom: 0;">
+                    <li><strong>Carton Dimensions:</strong> Split into three inputs (Length, Width, Height) to capture accurate 3D values. <strong>These must be inputted in MM.</strong> They are combined into a single string (L x W x H) on the label.</li>
+                    <li><strong>Gross Weight (KG):</strong> Enter the total carton weight here. This will be formatted next to the dimensions on the label output.</li>
+                </ul>
+            </div>
         </section>
 
 
 
         <div class="page-footer">
             <img src="assets/allport-pacd-logo.png" alt="Allport PACD" class="footer-logo">
-            <span class="page-number">Page 3 of 4</span>
+            <span class="page-number">Page 3 of 5</span>
             <div class="footer-text">Version 3.0 | March 2026</div>
         </div>
     </div>
@@ -674,13 +679,24 @@
                 <div class="step-number">3</div>
                 <div class="step-content">
                     <h4>Print</h4>
-                    <p>Print on <strong>A4</strong> paper with scale set to <strong>"Actual Size"</strong> or
-                        <strong>100%</strong>.
-                    </p>
+                    <p>Print on <strong>A4</strong> paper with scale set to <strong>"Actual Size"</strong> or <strong>100%</strong>.</p>
+                    <div style="margin-top: 5px;">
+                        <img src="assets/Print.png" alt="Print Settings Guide" style="width: 100%; border: 1px solid #e2e8f0; border-radius: 4px; display: block;">
+                        <p style="font-size: 0.6rem; margin-top: 3px; color: var(--secondary);">* Note: The instruction image is from Microsoft Edge. It is highly recommended to open the exported PDF in Microsoft Edge to follow these exact print settings.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <div class="page-footer">
+            <img src="assets/allport-pacd-logo.png" alt="Allport PACD" class="footer-logo">
+            <span class="page-number">Page 4 of 5</span>
+            <div class="footer-text">Version 3.0 | March 2026</div>
+        </div>
+    </div>
+
+    <!-- PAGE 5 -->
+    <div class="a4-page" id="page5">
         <!-- Section 6: Printing Specs -->
         <section class="section">
             <h2 class="section-title">
@@ -707,12 +723,14 @@
                 <li><strong>Wrong label size:</strong> Verify carton height.</li>
                 <li><strong>Preview issues:</strong> Exported PDF is correct even if mobile preview is off.</li>
                 <li><strong>Size too small:</strong> Ensure "Actual Size" print scale.</li>
+                <li><strong>Values not showing properly:</strong> Select the label size then re-enter the values.</li>
+                <li><strong>Alignment issue:</strong> This happens sometimes on mobile, for consistency, use a computer.</li>
             </ul>
         </section>
 
         <div class="page-footer">
             <img src="assets/allport-pacd-logo.png" alt="Allport PACD" class="footer-logo">
-            <span class="page-number">Page 4 of 4</span>
+            <span class="page-number">Page 5 of 5</span>
             <div class="footer-text">Version 3.0 | March 2026</div>
         </div>
     </div>
@@ -780,6 +798,19 @@
                     height: page4.offsetHeight
                 });
                 pdf.addImage(canvas4.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 210, 297);
+
+                // Page 5
+                pdf.addPage();
+                const page5 = document.getElementById('page5');
+                const canvas5 = await html2canvas(page5, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff',
+                    width: page5.offsetWidth,
+                    height: page5.offsetHeight
+                });
+                pdf.addImage(canvas5.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 210, 297);
 
                 pdf.save('instruction.pdf');
 
