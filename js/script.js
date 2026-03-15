@@ -58,6 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateLabels() {
         // Gather Data
+        const dims = [
+            document.getElementById('cartonLength').value,
+            document.getElementById('cartonWidth').value,
+            document.getElementById('cartonHeight').value
+        ].filter(v => v);
+        const cartonDimStr = dims.length > 0 ? dims.map(v => !isNaN(parseFloat(v)) ? parseFloat(v) / 10 : v).join(' x ') + ' CM' : '';
+
         const data = {
             poNumber: document.getElementById('poNumber').value,
             styleRef: document.getElementById('styleRef').value,
@@ -65,11 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             supplierName: document.getElementById('supplierName').value,
             lineCode: document.getElementById('lineCode').value,
             packId: document.getElementById('packId').value,
-            cartonDimension: [
-                document.getElementById('cartonLength').value,
-                document.getElementById('cartonWidth').value,
-                document.getElementById('cartonHeight').value
-            ].filter(v => v).join(' x '),
+            cartonDimension: cartonDimStr,
             grossWeight: document.getElementById('grossWeight').value,
             boxQty: document.getElementById('boxQty').value,
             description: document.getElementById('description').value,

@@ -1,4 +1,14 @@
 # Version History
+
+## v3.3 (Unit Conversion)
+**Release Date:** March 15, 2026
+
+### 🚀 New Features
+- **Carton Auto-Conversion:**
+  - Carton dimension inputs specified in MM (Millimeters) are now automatically converted to CM (Centimeters) for the final label output and PDF export, ensuring strict compliance with required output units while preserving simple entry format.
+
+---
+
 ## v3.2 (Documentation Enhancements)
 **Release Date:** March 11, 2026
 
