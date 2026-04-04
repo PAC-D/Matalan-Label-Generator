@@ -479,9 +479,9 @@
 <body>
     <!-- Export Button -->
     <div class="export-btn-container" id="exportBtnContainer">
-        <button class="export-btn" id="exportBtn" onclick="exportPDF()">
+        <a class="export-btn" id="exportBtn" href="instruction pdf.pdf" download="Matalan Label Generator - Instruction Manual.pdf">
             📥 Export PDF
-        </button>
+        </a>
     </div>
 
     <!-- PAGE 1 -->
@@ -735,95 +735,7 @@
         </div>
     </div>
 
-    <script>
-        async function exportPDF() {
-            const btn = document.getElementById('exportBtn');
-            const btnContainer = document.getElementById('exportBtnContainer');
 
-            btn.textContent = '⏳ Generating...';
-            btn.disabled = true;
-            btnContainer.style.display = 'none';
-
-            try {
-                const { jsPDF } = window.jspdf;
-                const pdf = new jsPDF('p', 'mm', 'a4');
-
-                // Page 1
-                const page1 = document.getElementById('page1');
-                const canvas1 = await html2canvas(page1, {
-                    scale: 2,
-                    useCORS: true,
-                    allowTaint: true,
-                    backgroundColor: '#ffffff',
-                    width: page1.offsetWidth,
-                    height: page1.offsetHeight
-                });
-                pdf.addImage(canvas1.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 210, 297);
-
-                // Page 2
-                pdf.addPage();
-                const page2 = document.getElementById('page2');
-                const canvas2 = await html2canvas(page2, {
-                    scale: 2,
-                    useCORS: true,
-                    allowTaint: true,
-                    backgroundColor: '#ffffff',
-                    width: page2.offsetWidth,
-                    height: page2.offsetHeight
-                });
-                pdf.addImage(canvas2.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 210, 297);
-
-                // Page 3
-                pdf.addPage();
-                const page3 = document.getElementById('page3');
-                const canvas3 = await html2canvas(page3, {
-                    scale: 2,
-                    useCORS: true,
-                    allowTaint: true,
-                    backgroundColor: '#ffffff',
-                    width: page3.offsetWidth,
-                    height: page3.offsetHeight
-                });
-                pdf.addImage(canvas3.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 210, 297);
-
-                // Page 4
-                pdf.addPage();
-                const page4 = document.getElementById('page4');
-                const canvas4 = await html2canvas(page4, {
-                    scale: 2,
-                    useCORS: true,
-                    allowTaint: true,
-                    backgroundColor: '#ffffff',
-                    width: page4.offsetWidth,
-                    height: page4.offsetHeight
-                });
-                pdf.addImage(canvas4.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 210, 297);
-
-                // Page 5
-                pdf.addPage();
-                const page5 = document.getElementById('page5');
-                const canvas5 = await html2canvas(page5, {
-                    scale: 2,
-                    useCORS: true,
-                    allowTaint: true,
-                    backgroundColor: '#ffffff',
-                    width: page5.offsetWidth,
-                    height: page5.offsetHeight
-                });
-                pdf.addImage(canvas5.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 210, 297);
-
-                pdf.save('instruction.pdf');
-
-            } catch (err) {
-                console.error('Error:', err);
-                alert('Error generating PDF: ' + err.message + '\n\nPlease try Ctrl+P instead and select "Save as PDF".');
-            }
-
-            btnContainer.style.display = 'block';
-            btn.textContent = '📥 Export PDF';
-            btn.disabled = false;
-        }
-    </script>
 </body>
 
 </html>
